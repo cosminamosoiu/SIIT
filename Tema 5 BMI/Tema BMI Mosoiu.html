@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="CSS BMI.css">
+    <title>BMI</title>
+  </head>
+  <body>
+    <div>
+      <p>Calculate BMI</p>
+      <div>
+        <label for="weight">Weight</label>
+        <input type="text" id="weight" />
+      </div>
+      <div>
+        <label for="height">Height</label>
+        <input type="text" id="height" />
+      </div>
+      <div>
+        <label for="name">Name</label>
+        <input type="text" id="name" />
+      </div>
+      <div>
+        <label for="gender">Gender</label>
+        <input type="text" id="gender" />
+      </div>
+      <br>
+      <button type="button" onclick="Calcuate()">Calculate BMI</button>
+      <button type="button" onclick="addData()">Create person</button>
+      <button type="button" onclick="deleteData()">Delete person</button>
+      <div id="showBodyType"></div>
+
+    <script>
+       var addDataArr = [];
+
+      function createPerson() {
+        var weight = parseFloat(document.getElementById("weight").value);
+        var height = parseFloat(document.getElementById("height").value);
+        var name = document.getElementById("name").value;
+        var gender = document.getElementById("gender").value;
+
+        document.getElementById("weight").value = '';
+        document.getElementById("height").value = '';
+        document.getElementById("name").value = '';
+        document.getElementById("gender").value= '';
+
+        return {
+          height,
+          weight,
+          name,
+          gender,
+        };
+      }
+
+  
+      function addData() {
+        addDataArr.push(createPerson());
+        console.log(addDataArr);
+      }
+
+      function deleteData() {
+        addDataArr.pop();
+        console.log(addDataArr);
+      }
+
+      function calculateBMI() {
+        var person = createPerson();
+        return person.weight / (person.height * person.height);
+      }
+
+      function determineBodyType() {
+        var BMI = calculateBMI();
+        var underweight = BMI < 18.5;
+        var normal = BMI > 18.5 && BMI < 25;
+        var overweight = BMI > 25 && BMI < 30;
+        if (underweight) {
+          return (weightRange = "underweight");
+        } else if (normal) {
+          return (weightRange = "normal");
+        } else if (overweight) {
+          return (weightRange = "overweight");
+        }
+        return (weightRange = "obese");
+      }
+
+      function determineBodyType2(weight, height) {
+        var BMI = weight / (height * height);
+        var underweight = BMI < 18.5;
+        var normal = BMI > 18.5 && BMI < 25;
+        var overweight = BMI > 25 && BMI < 30;
+        if (underweight) {
+          return (weightRange = "underweight");
+        } else if (normal) {
+          return (weightRange = "normal");
+        } else if (overweight) {
+          return (weightRange = "overweight");
+        }
+        return (weightRange = "obese");
+      }
+
+      function Calcuate() {
+        var bodyType = document.getElementById("showBodyType");
+        bodyType = '';
+        for(var i = 0; i < addDataArr.length; i++){
+          bodyType += `Name: ${addDataArr[i].name} , Body type: ${determineBodyType2(addDataArr[i].weight, addDataArr[i].height)}`;
+          bodyType.innerHTML += '<br>';
+        }
+      }
+    </script>
+  </body>
+</html>

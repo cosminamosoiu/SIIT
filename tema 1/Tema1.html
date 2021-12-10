@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Appointments</title>
+</head>
+<body style=background-color:#D6DBDF>
+    <style>
+    h1{
+        color:#117A65; 
+        font-family:times; 
+        font-size:60px;
+        text-shadow: 3px 3px 3px #ababab;
+        text-align:center;
+    }
+    h2{
+        color:black;
+        font-family:times;
+        font-size:30px;
+    }
+    table{
+        border:solid black;
+        border-collapse: collapse;
+    }
+    th{
+        font-family:times;
+        font-size: 30px;
+        border:solid black 3px;
+        border-collapse: collapse;
+
+    }
+    td{
+        border:solid black 1px;
+        border-collapse: collapse;
+    }
+    </style>
+    <h1>Programari pacienti</h1>
+    <h2><strong>Pentru a alege un medic, consultati tabelul de mai jos</strong></h2>
+    <table>
+        <tr>
+            <th colspan="2" rowspan="2">Nume si prenume</th>
+            <th colspan="5">Program</th>
+
+                   
+    
+        </tr>
+        <tr style="border:solid black 1px;">
+           <td>Luni</td>
+           <td>Marti</td>
+           <td>Miercuri</td>
+           <td>Joi</td>
+           <td>Vineri</td>
+        </tr>
+         
+        <tr> 
+            <td>Cristescu</td>
+            <td>Gabriela</td>
+            <td>8-14</td> 
+            <td>14-18</td>
+            <td>8-14</td>
+            <td>14-18</td>
+            <td>8-12</td>
+        </tr>
+        <tr>
+            <td>Grigorescu</td>
+            <td>Dan</td>
+            <td>14-18</td>
+            <td>8-14</td>
+            <td>8-14</td>
+            <td>14-18</td>
+            <td>Liber</td>
+        </tr>
+        <tr>
+            <td>Radacina</td>
+            <td>Gabriel</td>
+            <td>8-14</td>
+            <td>14-18</td>
+            <td>Liber</td>
+            <td>14-18</td>
+            <td>8-13</td>
+        </tr>
+        <tr>
+            <td>Soaica</td>
+            <td>Gabriela</td>
+            <td>13-18</td>
+            <td>10-14</td>
+            <td>13-18</td>
+            <td>10-14</td>
+            <td>13-18</td>
+        </tr>
+
+    </table>
+
+<p style="color:blue; font-family:Cambria; font-size:30px;">Mai Multe detalii despre medici:</p>
+<figure>
+    <div id="content">
+        <a href="https://www.oncocard.ro/doctor/dr-cristescu-claudia-gabriela/" target="_blank" class="images">
+            <img src="pic1.jpg" alt="Cristescu Gabriela" width="200" height="200" >
+            <figcaption>Dr. Cristescu Gabriela</figcaption>  
+        </a>
+        <a href="https://www.reginamaria.ro/medici/dr-grigorescu-dan" target="_blank" class="images">
+            <img src="pic2.jpg" alt="Grigorescu Dan" width="200" height="200">
+            <figcaption>Dr. Grigorescu Dan</figcaption>
+        </a>
+        <a href="https://medicisifarmacii.ro/medici/medic-familie/brasov/zarnesti/cabinet-medical-medicina-familie-dr-radacina-gabriel-marius" target="_blank" class="images">
+            <img src="pic3.jpg" alt="Radacina Gabriel" width="200" height="200">
+            <figcaption>Dr. Radacina Gabriel</figcaption>
+        </a>
+        <a href="https://uromedica.ro/despre-noi/" target="_blank" class="images">
+            <img src="pic4.jpg" alt="Soaica Gabriela" width="200" height="200">
+            <figcaption>Dr. Soaica Gabriela</figcaption>
+        </a>
+    </div>
+</figure>
+</body>
+
+</html>
+
+<style>
+.images
+{
+    display: inline-block;
+    margin: 30px;
+    padding: 0px;
+}
+#content
+{
+    display: block;
+    margin: 30px;
+    padding: 30px;
+    position: relative;
+    top: 20px;
+    height: auto;
+    max-width: auto;
+    overflow-y: hidden;
+    overflow-x:auto;
+}
+</style>

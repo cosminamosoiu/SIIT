@@ -1,0 +1,42 @@
+clinic = { name: 'Kinetobebe',
+	administratveDepartment: [{
+  			manager: [{ firstName: 'Raluca', lastName: 'Chisu', age: 40, city: 'Bucharest', studies: 'Economics', 
+        						duties: [{firstDuty :'Team coordination', secondDuty: 'Salaries', thirdDuty: 'Employee Complaints' }]
+                  }] ,
+        operationalManager: [{ firstName:'Loredana', lastName: 'Nicolae', age: 32, city: 'Bucharest', studies: 'Management',
+        											duties: [{frstDuty: 'Vacation organisation', secondDuty: 'Client complaints', 
+                              thirdDuty: 'Technology squisitions' }]
+                              }],      
+        asistentManager: [{ firstName: 'Elena', lastName: 'Ionescu', age: 27, city: 'Bucharest', studies: 'Physiotherapy',
+        										duties:[{firstDuty: 'Patient comunication', secondDuty: 'Documentation', 
+                            thhirdDuty: 'Employee Communication' }]
+                          }]
+ 	 									}] ,
+   employees: [{
+   		physiotherapists: [{ numberOfPhysios: 28, fieldOfWork: [{
+                			babies: [{ minAge:0, maxAge:2, diagnosis: [{ 
+                     					  orthopedic: [{ mostCommon: 'torticolis', secondMostCommon: 'talus-valgus' , 
+                                						thirdMostCommon: 'metatarsus-adductus' }],  
+                      					neurologic: [{ mostCommon: 'tetraplegia', secondMostCommon: 'diplegia', 
+                                						 thirdMostCommon: 'paraplegia' }], 
+                      					geneticDisease: [{ mostCommon:'Down syndrome', secondMostCommon: 'Rett syndrome', 
+                                							thirdMostCommon: 'FoxP1' }],
+                                postTraumatic: [{ mostCommon: 'Femur fractures', secondMostCommon: 'Tibial fractures', 
+                                							thirdMostCommon: 'Humerus Fractures' }]
+                                }]
+                              }] ,
+                      children: [{ minAge:2, maxAge:16, diagnosis: [{ mostCommon: 'Scoliosis', secondMostCommon: 'Hypotonia',
+                      						thirdMostCommon: 'Scoliotic attitude', fourthMostCommon: 'Flat foot'}]
+                                }]
+                            }]
+                }]
+           }] ,
+   therapeuticProgram: [{ recommendation:
+     [{  numberOfSessions: [{ firstOption: 'Individual Session', secondOption: 'Session Pack', thirdOptin: 'Go home withou																t therapy'}] ,
+         reevaluation:  [{firstOption: 'After 10 seddions', secondOption: 'After 20 sessions', thirdOption: 'Several months'}]       }]
+                           }] , 
+   space: [{therapistsPerShift:3, numberOfRooms: 3, patientsPerRoom:1, maxNumberOfPatients: [{ perDay: 27, perHour: 3, 
+   				perWeek: 162}], workingHours: [{monday:'8-20', tuesday: '8-20', wensday: '8-20 ', thursday: '8-20', friday: '8-20', 
+  				 saturday:'8-15'}]}]
+    
+}

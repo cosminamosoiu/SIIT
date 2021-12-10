@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src="ajax.js"></script>
+    <link rel="stylesheet" href="actors.css">
+    <title>Document</title>
+    <style>
+      table {
+        width: 100%;
+        border: 1px solid black;
+      }
+      img {
+        height: auto;
+        width: 50px;
+        border-radius: 10%;
+      }
+      td {
+        border: 1px solid black;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <!--<button id="add-crew">Add crew member</button> -->
+    <table id="crewList">
+    <thead id="tableHeading">
+      <tr id="headingsRow">
+        <th>ID</th>
+        <th>Character name</th>
+        <th>Actor/Actress name</th>
+        <th>Image</th>
+        <th>Year Of Birth</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+  <tbody>
+</table>
+
+    <form action="" id="crewForm" style="display: none">
+      <label for="id">ID</label>
+      <input type="text" name="id" id="idForm" />
+      <label for="character-name">Character Name</label>
+      <input type="text" name="charcter-name" id="characterFormName" />
+      <label for="actor-name">Actor Name</label>
+      <input type="text" name="actor-name" id="actorFormName" />
+      <label for="picture">Picture</label>
+      <input type="text" name="picture" id="picture" />
+      <label for="yearOfBirth">Year Of Birth</label>
+      <input type="text" name="yearOfBirth" id="yearOfBirthForm" />
+    </form>
+    <br />
+    <button id="addCrew">Add crew member</button>
+    <button id="saveCrewMember">Save data</button>
+   
+  </body>
+</html>
