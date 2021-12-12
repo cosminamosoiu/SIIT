@@ -2,9 +2,11 @@ const timeEl = document.getElementById("time");
 const dateEl = document.getElementById("date");
 const currentWeatherItemsEl = document.getElementById("curren-weather-items");
 const timezone = document.getElementById("time-zone");
-const countryEl = document.getElementById("country");
+const cityEl = document.getElementById("city");
 const weatherForecastEl = document.getElementById("weather-forecast");
 const currentTemmpEl = document.getElementById("current-temperature");
+const hourlyForecastEl = document.getElementById("hourly-forecast");
+const hourlyTempEl = document.getElementById("hourly-temp");
 
 const days = [
   "Sunday",
@@ -55,22 +57,45 @@ setInterval(() => {
 getWeatherData();
 function getWeatherData() {
   navigator.geolocation.getCurrentPosition((success) => {
+
     let { latitude, longitude } = success.coords;
+    
+    
+
 
     fetch(
-      `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&units=metric&appid=${API_KEY}`
+       `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&units=metric&appid=${API_KEY}`
     )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
         showWeatherData(data);
+        showHourlyData(data);
       });
+
+      fetch(
+        `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${API_KEY}`
+     )
+       .then((res) => res.json())
+       .then((data) => {
+         //console.log(data);
+         cityEl.innerHTML = data.city.name;
+
+       });
+
+
   });
 }
 
 function showWeatherData(data) {
   timezone.innerHTML = data.timezone;
-  //countryEl.innerHTML = data.lat + "N" + data.lon + "E";
+  
+  
+  if (navigator.geolocation) { //check if geolocation is available
+    navigator.geolocation.getCurrentPosition(function(position){
+      //console.log(position);
+    });   
+}
 
   let otherDayForecast = "";
   data.daily.forEach((day, idx) => {
@@ -103,4 +128,25 @@ function showWeatherData(data) {
   });
 
   weatherForecastEl.innerHTML = otherDayForecast;
+}
+
+function showHourlyData(data) {
+  //let setHour = document.getElementById("hour");
+  let hourlyForecast = "";
+  data.hourly.forEach((hour, idx) => {
+    if (idx < 12) {
+      hourlyForecast += `
+          <div class="hourly-forecast-item">
+          <div class="hour">${window.moment(hour.dt * 1000).format("ha")}</div>
+        <img
+          src="http://openweathermap.org/img/wn/${hour.weather[0].icon}@2x.png"
+          alt="weather icon"
+          class="w-icon"
+        />
+        <div class="hourly-temp">${hour.temp}&#176;C</div>
+      </div>`;
+    }
+  });
+  
+  hourlyForecastEl.innerHTML = hourlyForecast;
 }

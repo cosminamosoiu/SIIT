@@ -10,7 +10,7 @@ body {
   background: url("image.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  overflow: hidden;
+  /* overflow: scroll; */
   height: 100vh;
   font-family: "Poppins", sans-serif;
 }
@@ -68,7 +68,7 @@ body {
   border: 1px solid white;
 }
 
-.container-info .others .weather-item {
+.container-info {
   display: flex;
   justify-content: space-between;
 }
@@ -76,8 +76,8 @@ body {
 .future-forecast {
   background: rgba(24, 24, 27, 0.8);
   padding: 25px;
-  position: fixed;
-  bottom: o;
+  /* position:relative; */
+  /* bottom: 0; */
   display: flex;
   color: white;
   width: 100%;
@@ -129,10 +129,57 @@ body {
   font-weight: 100;
 }
 
+.hourly-forecast {
+  background: rgba(24, 24, 27, 0.8);
+  padding: 25px;
+  /* position: fixed; */
+  bottom: o;
+  display: inline;
+  color: white;
+  width: 100%;
+  align-items: center;
+  justify-content: end;
+}
+
 @media only screen and (max-width: 1000px) {
   .future-forecast {
     justify-content: start;
     align-items: none;
     overflow-x: scroll;
   }
+}
+
+.hourly-forecast {
+  background: rgba(24, 24, 27, 0.8);
+  padding: 50px;
+  position: relative;
+  bottom: 0;
+  display: inline-flex;
+  color: white;
+  width: 100%;
+  align-items: center;
+  justify-content: left;
+  overflow-x: scroll;
+}
+
+.hourly-forecast .hourly-forecast-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.hourly-forecast .hourly-forecast-item .hour {
+  padding: 5px 15px;
+  background: grey;
+  border-radius: 50px;
+  text-align: center;
+}
+
+.hourly-forecast .hourly-forecast-item .temp {
+  font-weight: 100;
 }
