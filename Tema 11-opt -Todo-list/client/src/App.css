@@ -1,0 +1,23 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: seashell;
+    color:rgb(31, 25, 25);
+}
+
+.container{
+    max-width: 1000px;
+    margin: auto;
+}
+
+.heading {
+    text-align: center;
+    font-family:'Times New Roman', Times, serif;
+    margin-top: 3rem;
+
+}
+
+.heading h1 {
+    font-size:4rem;
+}
